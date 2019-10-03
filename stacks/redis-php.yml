@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  phpderedis:
+    image: issammartos/phpredis:latest
+    restart: always
+    ports: 
+      - "8888:80"
+    networks:
+      - redis
+
+networks:
+  redis:
+    external: true
