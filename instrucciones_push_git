@@ -1,0 +1,14 @@
+  335  git clone git@github.com:flopezt/wpdock.git
+  336  git clone https://github.com/flopezt/wpdock.git
+  337  ls
+  338  mkdir stacks
+  339  cp /srv/docker/yaml/* stacks/
+  340  cp -R /srv/docker/yaml/* stacks/
+  341  ls
+  342  mv stacks wpdock/
+  343  ls
+  344  cd wpdock/
+  345  ls
+  346  git add * 
+  347  git commit -m "subir stacks"
+  348  git push

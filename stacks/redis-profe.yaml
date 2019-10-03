@@ -1,0 +1,26 @@
+version: '3.7'
+
+services:
+  redis:
+    image: redis
+    networks:
+      - redis
+  web:
+    image: kpeiruza/docker-php-mysql-redis
+    networks:
+      - redis
+      - proxy
+    deploy:
+      labels:
+        traefik.port: 80
+        traefik.frontend.rule: 'Host:webapp.192.168.20.219.nip.io'
+        traefik.docker.network: 'proxy'
+
+networks:
+  redis:
+    driver: 'overlay'
+  proxy:
+    external: true
+
+
+
