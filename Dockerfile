@@ -1,7 +1,7 @@
 FROM    ubuntu:latest
 
 RUN     apt update && \
-        apt install -y apache2 php php-mysql libapache2-mod-php wget && \
+        apt install -y apache2 php php-mysql php-redis libapache2-mod-php wget && \
         rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*
 
 RUN     wget https://es.wordpress.org/latest-es_ES.tar.gz -P /tmp && \
